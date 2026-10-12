@@ -1,0 +1,23 @@
+graph pcap {
+  layout="dot";
+  splines=true;
+  nodesep="0.6";
+  ranksep="0.9";
+  node [shape=box, fontsize=10];
+  "10.0.12.10" [label="10.0.12.10\nMitsubis"];
+  "10.0.12.12" [label="10.0.12.12\nRockwell"];
+  "10.0.12.14" [label="10.0.12.14\nOmronTat"];
+  "10.0.12.16" [label="10.0.12.16\nSiemens"];
+  "10.0.12.30" [label="10.0.12.30\nWeintekL"];
+  "10.0.12.40" [label="10.0.12.40\nWeintekL"];
+  "10.2.1.133" [label="10.2.1.133\nDell"];
+  "10.0.12.10" -- "10.0.12.30" [label=<<font color="#e41a1c">UDP (28366)</font>>, color="#e41a1c", penwidth=2, fontsize=9];
+  "10.0.12.14" -- "10.0.12.30" [label=<<font color="#4daf4a">CIP (15886)</font><br/><font color="#377eb8">TCP (2984)</font>>, color="#4daf4a:#377eb8", penwidth=2, fontsize=9];
+  "10.0.12.12" -- "10.0.12.30" [label=<<font color="#377eb8">TCP (16769)</font><br/><font color="#984ea3">CIP PCCC (9210)</font><br/><font color="#f781bf">ICMP (4)</font>>, color="#377eb8:#984ea3:#f781bf", penwidth=2, fontsize=9];
+  "10.0.12.16" -- "10.0.12.30" [label=<<font color="#ff7f00">S7COMM (5146)</font><br/><font color="#377eb8">TCP (2672)</font>>, color="#ff7f00:#377eb8", penwidth=2, fontsize=9];
+  "10.0.12.10" -- "10.0.12.40" [label=<<font color="#e41a1c">UDP (4330)</font>>, color="#e41a1c", penwidth=2, fontsize=9];
+  "10.0.12.30" -- "10.2.1.133" [label=<<font color="#377eb8">TCP (1821)</font>>, color="#377eb8", penwidth=2, fontsize=9];
+  "10.0.12.30" -- "10.0.12.40" [label=<<font color="#377eb8">TCP (3166)</font><br/><font color="#a65628">OpcUa (1266)</font>>, color="#377eb8:#a65628", penwidth=2, fontsize=9];
+  "10.0.12.40" -- "10.2.1.133" [label=<<font color="#377eb8">TCP (182)</font>>, color="#377eb8", penwidth=2, fontsize=9];
+  "10.0.12.16" -- "10.0.12.40" [label=<<font color="#377eb8">TCP (19)</font><br/><font color="#999999">TPKT (1)</font>>, color="#377eb8:#999999", penwidth=2, fontsize=9];
+}
